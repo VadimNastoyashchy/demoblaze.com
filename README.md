@@ -1,2 +1,2 @@
 # demoblaze.com
-Automation project for demoblaze.com
+Cypress automation project for demoblaze.com
