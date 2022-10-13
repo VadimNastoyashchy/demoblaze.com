@@ -10,6 +10,7 @@ export default defineConfig({
         reportFilename: 'report'
     },
     e2e: {
+        specPattern: 'e2e/**/*.cy.{js,jsx,ts,tsx}',
         video: false,
         viewportHeight: 1920,
         viewportWidth: 1080,
