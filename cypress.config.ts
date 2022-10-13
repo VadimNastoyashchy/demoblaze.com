@@ -10,10 +10,10 @@ export default defineConfig({
         reportFilename: 'report'
     },
     e2e: {
-        specPattern: 'e2e/**/*.cy.{js,jsx,ts,tsx}',
+        supportFile: 'cypress/support/e2e.ts',
         video: false,
-        viewportHeight: 1920,
-        viewportWidth: 1080,
+        viewportHeight: 1080,
+        viewportWidth: 1920,
         baseUrl: 'https://www.demoblaze.com/',
         chromeWebSecurity: false,
         env: {
