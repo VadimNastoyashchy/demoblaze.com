@@ -4,10 +4,11 @@
   "description": "Cypress automation project for demoblaze.com",
   "main": "index.js",
   "scripts": {
-    "open": "npx cypress open",
-    "tsc": "npx tsc --project tsconfig.json",
+    "tsc": "npx tsc --project tsconfig.json --noEmit",
     "lint": "eslint . --ext .ts",
-    "check":"npm run tsc && npm run lint && npm run open "
+    "check":"npm run tsc && npm run lint",
+    "open": "npm run check && npx cypress open ",
+    "test": "npm run check && npx cypress run"
   },
   "repository": {
     "type": "git",
