@@ -1,19 +1,19 @@
 import HomePage from '../page-object/pages/HomePage';
 
-const homePage = new HomePage();
-const user = Cypress.env('accounts')['user'];
-const SarahConnor = Cypress.env('accounts')['user']['userName'];
+const homePage: HomePage = new HomePage();
+const userName: string = Cypress.env('accounts')['user']['userName'];
+const password: string = Cypress.env('accounts')['user']['password'];
 
 describe('Login and Logout test', () => {
     it('Login and Logout user in page', () => {
         homePage
-        .visit()
-        .checkPageUrl()
-            .header.clickOnLogInButton();
-        homePage.logInModaleWindow
-            .logInWithCredentials(user)
+            .visit()
             .checkPageUrl()
-            .header.checkThatUserLoggedInSite(SarahConnor)
+            .header.clickOnLogInButton();
+        homePage.logInWindow
+            .logInWithCredentials(userName, password)
+            .checkPageUrl()
+            .header.welcomeUserName(userName)
             .clickOnLogOutButton();
         homePage.checkPageUrl()
             .header.checkLogInButton();

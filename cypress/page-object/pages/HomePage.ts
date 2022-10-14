@@ -1,11 +1,11 @@
 import Header from '../components/Header';
-import LogInModaleWindow from '../modales/LogInModaleWindow';
+import LogInWindow from '../modales/LogInWindow';
 import BasePage from '../base/BagePage';
 
-export default class InventoryPage extends BasePage {
+export default class HomePage extends BasePage {
 
   public header: Header = new Header();
-  public logInModaleWindow: LogInModaleWindow = new LogInModaleWindow();
+  public logInWindow: LogInWindow = new LogInWindow();
 
   constructor() {
     super('Home Page', 'index.html');

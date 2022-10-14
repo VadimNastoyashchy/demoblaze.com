@@ -1,29 +1,27 @@
 export default class Header {
 
-  private headerContainer: string = '#navbarExample';
+  readonly headerContainer: string = '#navbarExample';
 
   private get logInButton(): Cypress.Chainable {
-    return cy.get(`${this.headerContainer} [id="login2"]`);
+    return cy.get(`${this.headerContainer} [id*="gin2"]`);
   }
   private get logOutButton(): Cypress.Chainable {
-    return cy.get(`${this.headerContainer} [id="logout2"]`);
+    return cy.get(`${this.headerContainer} [id*="out2"]`);
   }
-  private get welcomeUserName(): Cypress.Chainable {
-    return cy
-      .get(`${this.headerContainer} [id="nameofuser"]`, { timeout: 5000 })
+
+  public  welcomeUserName(userName:string): this {
+     cy.get(`${this.headerContainer} [id^="nameo"]`, { timeout: 10000 })
       .should(($x) => {
-        expect($x).to.have.text('Welcome SarahConnor');
+        expect($x).to.have.text(`Welcome ${userName}`);
       });
+      return this;
   }
 
   public clickOnLogInButton(): this {
     this.logInButton.click();
     return this;
   }
-  public checkThatUserLoggedInSite(userName: string): this {
-    this.welcomeUserName.contains(`Welcome ${userName}`);
-    return this;
-  }
+
   public clickOnLogOutButton(): this {
     this.logOutButton.click();
     return this;
