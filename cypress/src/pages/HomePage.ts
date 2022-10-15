@@ -1,5 +1,5 @@
 import Header from '../components/Header';
-import LogInWindow from '../modal/LogInModal';
+import LogInWindow from '../modals/LogInModal';
 import BasePage from '../base/BasePage';
 
 export default class HomePage extends BasePage {

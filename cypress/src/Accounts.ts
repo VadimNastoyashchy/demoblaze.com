@@ -1,3 +1,3 @@
 export enum Accounts {
-    First = 'firstUser'
+    Active = 'active',
 }

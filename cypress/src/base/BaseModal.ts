@@ -5,5 +5,4 @@ export default abstract class BaseModal {
     constructor(modalContainer: string = '') {
         this.MODAL_CONTAINER = modalContainer;
     }
-
 }
