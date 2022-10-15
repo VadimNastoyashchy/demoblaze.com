@@ -1,6 +1,6 @@
 import Header from '../components/Header';
-import LogInWindow from '../modales/LogInWindow';
-import BasePage from '../base/BagePage';
+import LogInWindow from '../modal/LogInModal';
+import BasePage from '../base/BasePage';
 
 export default class HomePage extends BasePage {
 
@@ -8,6 +8,6 @@ export default class HomePage extends BasePage {
   public logInWindow: LogInWindow = new LogInWindow();
 
   constructor() {
-    super('Home Page', 'index.html');
+    super('index.html');
   }
 }

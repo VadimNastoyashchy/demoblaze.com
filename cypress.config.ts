@@ -18,7 +18,7 @@ export default defineConfig({
     chromeWebSecurity: false,
     env: {
       accounts: {
-        user: {
+        firstUser: {
           userName: 'SarahConnor',
           password: '12345678',
         },

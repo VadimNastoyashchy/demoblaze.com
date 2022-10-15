@@ -1,19 +1,19 @@
 import HomePage from '../page-object/pages/HomePage';
+import { Accounts } from '../plugins/Enums';
+import Utils from '../support/Utils';
 
 const homePage: HomePage = new HomePage();
-const userName: string = Cypress.env('accounts')['user']['userName'];
-const password: string = Cypress.env('accounts')['user']['password'];
 
 describe('Login and Logout test', () => {
-    it('Login and Logout user in page', () => {
+    it('Login and Logout first user in page', () => {
+        const { userName, password } = Utils.getCredentials(Accounts.First);
         homePage
             .visit()
             .checkPageUrl()
             .header.clickOnLogInButton();
         homePage.logInWindow
             .logInWithCredentials(userName, password)
-            .checkPageUrl()
-            .header.welcomeUserName(userName)
+            .header.checkUserName(userName)
             .clickOnLogOutButton();
         homePage.checkPageUrl()
             .header.checkLogInButton();
