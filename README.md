@@ -16,12 +16,12 @@ npm install
 ### Run test:
 
 ```
-npx cypress open
+npx run test
 
 ### Also, don't forget to use:
 
 >_To check syntax for types using TypeScript compiler & identifying problematic patterns found in code before commit._
 
 ```
-npm run lint
+npm run check
 ```
