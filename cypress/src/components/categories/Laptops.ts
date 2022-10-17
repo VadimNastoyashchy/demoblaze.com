@@ -1,9 +1,6 @@
-export default class LaptopsItems {
-    private productListItemsContainer: string = '#tbodyid';
+import BaseCategories from '../../base/BaseCategories';
 
-    private get productItem(): Cypress.Chainable {
-        return cy.get(`${this.productListItemsContainer} [class^="col-lg-4"]`);
-    }
+export default class Laptops extends BaseCategories {
 
     public checkFirstProductLaptopItem(): this {
         this.productItem.first()

@@ -1,9 +1,6 @@
-export default class PhoneItems {
-    private productListItemsContainer: string = '#tbodyid';
+import BaseCategories from '../../base/BaseCategories';
 
-    private get productItem(): Cypress.Chainable {
-        return cy.get(`${this.productListItemsContainer} [class^="col-lg-4"]`);
-    }
+export default class Phone extends BaseCategories {
 
     public checkFirstProductPhoneItem(): this {
         this.productItem.first()
