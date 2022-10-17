@@ -1,30 +1,27 @@
 import HomePage from '../src/pages/HomePage';
 
 describe('Navigation tests', () => {
-    it('Checking that the product exists in the phone category', () => {
+    it('Check that the product exists in the Phone category', () => {
         const homePage: HomePage = new HomePage();
 
         homePage
             .visit()
-            .checkPageUrl()
             .categories.clickOnPhonesCategoryButton()
             .checkFirstProductPhoneItem();
     });
-    it('Checking that the product exists in the laptops category', () => {
+    it('Check that the product exists in the Laptops category', () => {
         const homePage: HomePage = new HomePage();
 
         homePage
             .visit()
-            .checkPageUrl()
             .categories.clickOnLaptopsCategoryButton()
             .checkFirstProductLaptopItem();
     });
-    it('Checking that the product exists in the monitors category', () => {
+    it('Check that the product exists in the Monitors category', () => {
         const homePage: HomePage = new HomePage();
 
         homePage
             .visit()
-            .checkPageUrl()
             .categories.clickOnMonitorsCategoryButton()
             .checkFirstProductMonitorItem();
     });

@@ -1,34 +1,43 @@
-import LaptopsItems from './LaptopsItems';
-import MonitorsItems from './MonitorsItems';
-import PhoneItems from './PhoneItems';
+import BaseCategories from '../base/BaseCategories';
+import LaptopsItems from './categories/Laptops';
+import MonitorsItems from './categories/Monitors';
+import PhoneItems from './categories/Phone';
 
-export default class Categories {
+export default class Categories extends BaseCategories {
+    public phoneItems: PhoneItems = new PhoneItems();
+    public laptopsItems: LaptopsItems = new LaptopsItems();
+    public monitorsItems: MonitorsItems = new MonitorsItems();
     private listCategoriesContainer: string = '.list-group';
 
-    private get phonesCategoryButton(): Cypress.Chainable {
-        return cy.get(`${this.listCategoriesContainer} [id="itemc"]`);
+    constructor() {
+        super('.container');
     }
 
-    private get laptopsCategoryButton(): Cypress.Chainable {
-        return cy.get(`${this.listCategoriesContainer} [id="itemc"]`);
-    }
-
-    private get monitorsCategoryButton(): Cypress.Chainable {
+    private get categoryButton(): Cypress.Chainable {
         return cy.get(`${this.listCategoriesContainer} [id="itemc"]`);
     }
 
     public clickOnPhonesCategoryButton(): PhoneItems {
-        this.phonesCategoryButton.should('be.visible').contains('Phones').click({ force: true });
+        this.categoryButton
+            .should('be.visible')
+            .contains('Phones')
+            .click();
         return new PhoneItems();
     }
 
     public clickOnLaptopsCategoryButton(): LaptopsItems {
-        this.laptopsCategoryButton.should('be.visible').contains('Laptops').click({ force: true });
+        this.categoryButton
+            .should('be.visible')
+            .contains('Laptops')
+            .click();
         return new LaptopsItems();
     }
 
     public clickOnMonitorsCategoryButton(): MonitorsItems {
-        this.monitorsCategoryButton.should('be.visible').contains('Monitors').click({ force: true });
+        this.categoryButton.
+            should('be.visible')
+            .contains('Monitors')
+            .click();
         return new MonitorsItems();
     }
 }
