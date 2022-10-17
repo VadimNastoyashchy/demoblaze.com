@@ -2,7 +2,7 @@ import Laptops from './categories/Laptops';
 import Monitors from './categories/Monitors';
 import Phone from './categories/Phone';
 
-export default class Categories{
+export default class Categories {
 
     private listCategoriesContainer: string = '.list-group';
 

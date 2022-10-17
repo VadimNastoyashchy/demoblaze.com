@@ -8,7 +8,7 @@ export default abstract class BaseCategories {
 
     public checkFirstProductItemIsVisible(): this {
         this.productsItem.first()
-        .should('be.visible');
+            .should('be.visible');
         return this;
     }
 }
