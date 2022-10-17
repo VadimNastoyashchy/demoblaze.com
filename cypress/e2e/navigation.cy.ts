@@ -7,7 +7,7 @@ describe('Navigation tests', () => {
         homePage
             .visit()
             .categories.clickOnPhonesCategoryButton()
-            .checkFirstProductPhoneItem();
+            .checkFirstProductItemIsVisible();
     });
     it('Check that the product exists in the Laptops category', () => {
         const homePage: HomePage = new HomePage();
@@ -15,7 +15,7 @@ describe('Navigation tests', () => {
         homePage
             .visit()
             .categories.clickOnLaptopsCategoryButton()
-            .checkFirstProductLaptopItem();
+            .checkFirstProductItemIsVisible();
     });
     it('Check that the product exists in the Monitors category', () => {
         const homePage: HomePage = new HomePage();
@@ -23,6 +23,6 @@ describe('Navigation tests', () => {
         homePage
             .visit()
             .categories.clickOnMonitorsCategoryButton()
-            .checkFirstProductMonitorItem();
+            .checkFirstProductItemIsVisible();
     });
 });
