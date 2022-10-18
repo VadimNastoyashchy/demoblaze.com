@@ -25,7 +25,7 @@ describe('Functionality tests', () => {
             .categories.clickOnMonitorsCategoryButton()
             .checkFirstProductItemIsVisible();
     });
-    it.only('Check that the carousel works consistently.', () => {
+    it('Check that the carousel works consistently.', () => {
         const homePage: HomePage = new HomePage();
 
         homePage
