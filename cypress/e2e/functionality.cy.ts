@@ -1,6 +1,6 @@
 import HomePage from '../src/pages/HomePage';
 
-describe('Navigation tests', () => {
+describe('Functionality tests', () => {
     it('Check that the product exists in the Phone category', () => {
         const homePage: HomePage = new HomePage();
 
@@ -24,5 +24,21 @@ describe('Navigation tests', () => {
             .visit()
             .categories.clickOnMonitorsCategoryButton()
             .checkFirstProductItemIsVisible();
+    });
+    it('Check that the carousel works consistently.', () => {
+        const homePage: HomePage = new HomePage();
+
+        homePage
+            .visit()
+            .carousel.clickCarouselNextButton()
+            .checkActiveItem('Second slide')
+            .clickCarouselPreviousButton()
+            .checkActiveItem('First slide')
+            .clickCarouselNextButton()
+            .checkActiveItem('Second slide')
+            .clickCarouselNextButton()
+            .checkActiveItem('Third slide')
+            .clickCarouselNextButton()
+            .checkActiveItem('First slide');
     });
 });
