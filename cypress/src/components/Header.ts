@@ -1,7 +1,7 @@
 export default class Header {
 
-  private get logInButton(): Cypress.Chainable {
-    return cy.get('#login2');
+  private get headerButton(): Cypress.Chainable {
+    return cy.get('.nav-link');
   }
 
   private get logOutButton(): Cypress.Chainable {
@@ -13,7 +13,11 @@ export default class Header {
   }
 
   public clickOnLogInButton(): this {
-    this.logInButton.click();
+    this.headerButton.contains('Log in').click();
+    return this;
+  }
+  public clickOnContactButton(): this {
+    this.headerButton.contains('Contact').click();
     return this;
   }
 
@@ -28,7 +32,7 @@ export default class Header {
   }
 
   public checkLogInButton(): this {
-    this.logInButton.should('have.text', 'Log in');
+    this.headerButton.should('have.text', 'Log in');
     return this;
   }
 }

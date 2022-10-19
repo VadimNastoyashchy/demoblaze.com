@@ -12,7 +12,7 @@ describe('Login and Logout tests', () => {
             .checkPageUrl()
             .header.clickOnLogInButton();
 
-        homePage.logInWindow
+        homePage.logInModal
             .logInWithCredentials(name, password)
             .header.checkUserName(name)
             .clickOnLogOutButton();
