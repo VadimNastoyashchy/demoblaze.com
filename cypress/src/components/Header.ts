@@ -35,7 +35,7 @@ export default class Header {
   }
 
   public checkLogInButton(): this {
-    this.headerButton.should('have.text', 'Log in');
+    this.logInButton.should('have.text', 'Log in');
     return this;
   }
 }
