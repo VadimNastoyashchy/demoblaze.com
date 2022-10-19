@@ -17,7 +17,6 @@ export default defineConfig({
     baseUrl: 'https://www.demoblaze.com/',
     chromeWebSecurity: false,
     env: {
-      byCatApiUrl:'https://api.demoblaze.com/bycat',
       accounts: {
         active: {
           name: 'SarahConnor',
