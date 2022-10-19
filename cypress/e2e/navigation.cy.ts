@@ -6,7 +6,7 @@ describe('Check modals window on the page', () => {
         homePage
             .visit()
             .header.clickOnContactButton();
-            homePage.contactModal
+        homePage.contactModal
             .checkTextInModalHeader('New message')
             .checkTextFormAndInputField('Contact Email:')
             .checkTextFormAndInputField('Contact Name:')
@@ -14,5 +14,15 @@ describe('Check modals window on the page', () => {
             .checkHeaderCloseButton()
             .checkFooterCloseButton('Close')
             .checkFooterSendButton('Send message');
+    });
+    it('Check About us modal window', () => {
+        homePage
+            .visit()
+            .header.clickOnAboutUsButton();
+        homePage.aboutUsModal
+            .checkTextInModalHeader('About us')
+            .checkThatAboutUsVideoVisible()
+            .checkHeaderCloseButton()
+            .checkFooterCloseButton('Close');
     });
 });

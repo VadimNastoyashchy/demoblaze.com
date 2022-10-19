@@ -32,7 +32,7 @@ export default abstract class BaseModal {
     }
 
     public checkFooterCloseButton(textButton: string): this {
-        this.footerCloseModalButton.contains(textButton).should('be.visible');
+        this.footerCloseModalButton.contains(textButton);
         return this;
     }
 }
