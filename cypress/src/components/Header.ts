@@ -11,7 +11,8 @@ export default class Header {
   private get userNameInHeader(): Cypress.Chainable {
     return cy.get('#nameofuser');
   }
-  private get contactButton(): Cypress.Chainable {
+
+  private get headerButton(): Cypress.Chainable {
     return cy.get('.nav-link');
   }
 
@@ -19,8 +20,14 @@ export default class Header {
     this.logInButton.contains('Log in').click();
     return this;
   }
+
   public clickOnContactButton(): this {
-    this.contactButton.contains('Contact').click();
+    this.headerButton.contains('Contact').click();
+    return this;
+  }
+
+  public clickOnAboutUsButton(): this {
+    this.headerButton.contains('About us').click();
     return this;
   }
 
