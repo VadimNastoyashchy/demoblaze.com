@@ -15,7 +15,7 @@ describe('Check modals window on the page', () => {
             .checkFooterCloseButton('Close')
             .checkFooterSendButton('Send message');
     });
-    it.only('Check About us modal window', () => {
+    it('Check About us modal window', () => {
         homePage
             .visit()
             .header.clickOnAboutUsButton();
