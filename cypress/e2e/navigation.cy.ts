@@ -12,7 +12,7 @@ describe('Check modals window on the page', () => {
             .checkTextFormAndInputField('Contact Name:')
             .checkTextFormAndInputField('Message:')
             .checkHeaderCloseButton()
-            .checkFooterCloseButton('Close')
+            .checkFooterCloseButton()
             .checkFooterSendButton('Send message');
     });
     it('Check About us modal window', () => {
@@ -23,6 +23,30 @@ describe('Check modals window on the page', () => {
             .checkTextInModalHeader('About us')
             .checkThatAboutUsVideoVisible()
             .checkHeaderCloseButton()
-            .checkFooterCloseButton('Close');
+            .checkFooterCloseButton();
+    });
+    it('Check Log in modal window', () => {
+        homePage
+            .visit()
+            .header.clickOnLogInButton();
+        homePage.logInModal
+            .checkTextInModalHeader('Log in')
+            .checkTextFormAndInputField('Username:')
+            .checkTextFormAndInputField('Password:')
+            .checkHeaderCloseButton()
+            .checkFooterCloseButton()
+            .checkFooterLogInButton('Log in');
+    });
+    it('Check Sign up modal window', () => {
+        homePage
+            .visit()
+            .header.clickOnSignUpButton();
+        homePage.singUpModal
+            .checkTextInModalHeader('Sign up')
+            .checkTextFormAndInputField('Username:')
+            .checkTextFormAndInputField('Password:')
+            .checkHeaderCloseButton()
+            .checkFooterCloseButton()
+            .checkFooterSignUpButton('Sign up');
     });
 });
