@@ -7,7 +7,7 @@ export default abstract class BaseCategories {
         return cy.get(`${this.CATEGORIES_CONTAINER} > div`);
     }
     public get titleProductsItem(): Cypress.Chainable {
-        return cy.get(`${this.CATEGORIES_CONTAINER}  .card-title`);
+        return cy.get(`${this.CATEGORIES_CONTAINER}  .hrefch`);
     }
 
     public checkFirstProductItemIsVisible(): this {
