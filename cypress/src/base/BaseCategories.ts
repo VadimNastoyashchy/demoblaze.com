@@ -7,7 +7,7 @@ export default abstract class BaseCategories {
         return cy.get(`${this.CATEGORIES_CONTAINER} > div`);
     }
     public get titleProductsItem(): Cypress.Chainable {
-        return cy.get(`${this.CATEGORIES_CONTAINER}  .hrefch`);
+        return cy.get(`${this.CATEGORIES_CONTAINER} .hrefch`);
     }
 
     public checkFirstProductItemIsVisible(): this {
@@ -17,7 +17,7 @@ export default abstract class BaseCategories {
     }
 
     public clickOnFirstTitleProductItem(): ProductPage {
-        this.titleProductsItem.eq(0).should('be.visible').click();
+        this.titleProductsItem.eq(0).should('be.visible').click({force:true});
         return new ProductPage();
     }
 }
