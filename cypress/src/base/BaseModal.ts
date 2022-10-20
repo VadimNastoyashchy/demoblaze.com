@@ -8,6 +8,13 @@ export default abstract class BaseModal {
     constructor(modalContainer: string = '') {
         this.MODAL_CONTAINER = modalContainer;
     }
+    protected get modalTextForm(): Cypress.Chainable {
+        return cy.get(`${this.MODAL_BODY_CONTAINER} .form-control-label`);
+    }
+
+    protected get modalInputs(): Cypress.Chainable {
+        return cy.get(`${this.MODAL_BODY_CONTAINER} .form-control`);
+    }
 
     protected get modalHeaderText(): Cypress.Chainable {
         return cy.get(`${this.MODAL_HEADER_CONTAINER} .modal-title`);
@@ -21,6 +28,20 @@ export default abstract class BaseModal {
         return cy.get(`${this.MODAL_FOOTER_CONTAINER} > .btn-secondary`);
     }
 
+    protected get modalFooterButton(): Cypress.Chainable {
+        return cy.get(`${this.MODAL_FOOTER_CONTAINER} > .btn-primary`);
+    }
+
+    private checkTextFormsInModalWindow(nameForm: string): this {
+        this.modalTextForm.contains(nameForm);
+        return this;
+    }
+
+    private checkInputFieldsInModalWindow(): this {
+        this.modalInputs.should('be.visible');
+        return this;
+    }
+
     public checkTextInModalHeader(headerText: string): this {
         this.modalHeaderText.contains(headerText);
         return this;
@@ -31,8 +52,14 @@ export default abstract class BaseModal {
         return this;
     }
 
-    public checkFooterCloseButton(textButton: string): this {
-        this.footerCloseModalButton.contains(textButton);
+    public checkFooterCloseButton(): this {
+        this.footerCloseModalButton.contains('Close');
+        return this;
+    }
+
+    public checkTextFormAndInputField(nameForm: string): this {
+        this.checkTextFormsInModalWindow(nameForm);
+        this.checkInputFieldsInModalWindow();
         return this;
     }
 }

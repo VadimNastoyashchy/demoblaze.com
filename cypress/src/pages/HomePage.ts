@@ -5,6 +5,7 @@ import Categories from '../components/Categories';
 import Carousel from '../components/slider/Carousel';
 import ContactModal from '../modals/ContactModal';
 import AboutUsModal from '../modals/AboutUsModal';
+import SignUpModal from '../modals/SignUpModal';
 
 export default class HomePage extends BasePage {
 
@@ -14,6 +15,7 @@ export default class HomePage extends BasePage {
   public carousel: Carousel = new Carousel();
   public contactModal: ContactModal = new ContactModal();
   public aboutUsModal: AboutUsModal = new AboutUsModal();
+  public singUpModal: SignUpModal = new SignUpModal();
 
   constructor() {
     super('index.html');

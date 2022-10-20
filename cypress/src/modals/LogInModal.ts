@@ -8,15 +8,11 @@ export default class LogInModal extends BaseModal {
   }
 
   private get inputUserNameField(): Cypress.Chainable {
-    return cy.get('#loginusername');
+    return cy.get(`${this.MODAL_BODY_CONTAINER} #loginusername`);
   }
 
   private get inputPasswordField(): Cypress.Chainable {
-    return cy.get('#loginpassword');
-  }
-
-  private get modalLogInButton(): Cypress.Chainable {
-    return cy.get('.btn-primary');
+    return cy.get(`${this.MODAL_BODY_CONTAINER} #loginpassword`);
   }
 
   private enterEmail(userName: string): this {
@@ -36,7 +32,7 @@ export default class LogInModal extends BaseModal {
   }
 
   private clickOnLogInButton(): void {
-    this.modalLogInButton
+    this.modalFooterButton
       .contains('Log in')
       .click();
   }
@@ -46,5 +42,9 @@ export default class LogInModal extends BaseModal {
     this.enterPassword(password);
     this.clickOnLogInButton();
     return new HomePage();
+  }
+  public checkFooterLogInButton(textButton: string): this {
+    this.modalFooterButton.contains(textButton).should('be.visible');
+    return this;
   }
 }

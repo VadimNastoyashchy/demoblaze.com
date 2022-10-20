@@ -30,6 +30,10 @@ export default class Header {
     this.headerButton.contains('About us').click();
     return this;
   }
+  public clickOnSignUpButton(): this {
+    this.headerButton.contains('Sign up').click();
+    return this;
+  }
 
   public checkUserName(userName: string): this {
     this.userNameInHeader.should('have.text', `Welcome ${userName}`);
