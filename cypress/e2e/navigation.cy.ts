@@ -15,6 +15,7 @@ describe('Check modals window on the page', () => {
             .checkFooterCloseButton()
             .checkFooterSendButton('Send message');
     });
+
     it('Check About us modal window', () => {
         homePage
             .visit()
@@ -25,6 +26,7 @@ describe('Check modals window on the page', () => {
             .checkHeaderCloseButton()
             .checkFooterCloseButton();
     });
+
     it('Check Log in modal window', () => {
         homePage
             .visit()
@@ -37,6 +39,7 @@ describe('Check modals window on the page', () => {
             .checkFooterCloseButton()
             .checkFooterLogInButton('Log in');
     });
+
     it('Check Sign up modal window', () => {
         homePage
             .visit()
