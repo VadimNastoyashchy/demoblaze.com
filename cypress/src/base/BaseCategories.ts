@@ -17,7 +17,7 @@ export default abstract class BaseCategories {
     }
 
     public clickOnFirstTitleProductItem(): ProductPage {
-            this.titleProductsItem.eq(0).click();
+        this.titleProductsItem.eq(0).should('be.visible').click();
         return new ProductPage();
-}
+    }
 }
