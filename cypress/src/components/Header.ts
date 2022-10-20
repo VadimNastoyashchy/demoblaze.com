@@ -1,3 +1,4 @@
+import CartPage from '../pages/CartPage';
 export default class Header {
 
   private get logInButton(): Cypress.Chainable {
@@ -33,6 +34,10 @@ export default class Header {
   public clickOnSignUpButton(): this {
     this.headerButton.contains('Sign up').click();
     return this;
+  }
+  public clickOnCartButton(): CartPage {
+    this.headerButton.contains('Cart').click();
+    return new CartPage();
   }
 
   public checkUserName(userName: string): this {
