@@ -17,7 +17,7 @@ export default class ProductPage extends BasePage {
     }
 
     public checkProductName(titleProduct: string): this {
-        this.productName.should('have.text', titleProduct);
+        this.productName.contains(titleProduct);
         return this;
     }
 
