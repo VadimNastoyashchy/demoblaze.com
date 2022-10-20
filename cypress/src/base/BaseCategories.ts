@@ -16,8 +16,8 @@ export default abstract class BaseCategories {
         return this;
     }
 
-    public checkFirstTitleProductAndClickHim(titleProduct: string): ProductPage {
-        this.titleProductsItem.first().contains(titleProduct).click();
+    public clickOnFirstTitleProductItem(): ProductPage {
+            this.titleProductsItem.eq(0).click();
         return new ProductPage();
-    }
+}
 }
