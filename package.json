@@ -8,7 +8,7 @@
     "lint": "eslint . --ext .ts",
     "check":"npm run tsc && npm run lint",
     "open": "npm run check && npx cypress open",
-    "test": "npm run check && npx cypress run"
+    "test": "npm run check && npx cypress run --browser chrome"
   },
   "repository": {
     "type": "git",
