@@ -24,7 +24,7 @@
     "@types/mocha": "10.0.0",
     "@typescript-eslint/eslint-plugin": "5.40.0",
     "@typescript-eslint/parser": "5.40.0",
-    "cypress": "11.0.0",
+    "cypress": "12.1.0",
     "eslint": "8.25.0",
     "eslint-plugin-cypress": "2.12.1",
     "mochawesome": "7.1.3",
