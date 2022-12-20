@@ -1,9 +1,10 @@
 name: GitHub Actions Manually
 on: [workflow_dispatch]
+
 jobs:
  cypress-run:
     runs-on: ubuntu-latest
-     strategy:
+    strategy:
      matrix:
       job: [0, 1, 2, 3]
     steps: 
