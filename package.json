@@ -8,7 +8,7 @@
     "lint": "eslint . --ext .ts",
     "check":"npm run tsc && npm run lint",
     "open": "npm run check && npx cypress open",
-    "test": "npm run check && npx cypress run --record --key 6afb99f8-bd78-497a-83a8-402885daa820"
+    "test": "npx cypress run --record --key 6afb99f8-bd78-497a-83a8-402885daa820"
   },
   "repository": {
     "type": "git",
